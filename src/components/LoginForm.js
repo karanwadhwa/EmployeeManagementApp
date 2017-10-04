@@ -31,7 +31,7 @@ class LoginForm extends React.Component {
   render() {
     return (
       <View>
-        <Header headerText='Manager Login' />
+        {/* <Header headerText='Manager Login' /> */}
         <Text style={styles.errorStyle}>
             {this.props.errormsg}
         </Text>
@@ -46,7 +46,7 @@ class LoginForm extends React.Component {
           </CardItem>
           <CardItem>
             <Input 
-              label='Password'
+              label='Password' 
               /* placeholder='Password' */
               secureTextEntry
               onChangeText={this.onPasswordChange.bind(this)}
