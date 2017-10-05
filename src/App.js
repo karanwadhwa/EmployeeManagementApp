@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import ReduxThunk from 'redux-thunk';
 
-import Router from './Router';
+import { Root } from './Router';
 import reducers from './reducers';
 
 class App extends React.Component {
@@ -24,7 +24,7 @@ class App extends React.Component {
   render() {
     return (
       <Provider store={createStore(reducers, {}, applyMiddleware(ReduxThunk))}>
-        <Router />
+        <Root />
       </Provider>
     );
   }

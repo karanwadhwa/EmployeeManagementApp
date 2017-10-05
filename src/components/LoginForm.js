@@ -6,6 +6,7 @@ import { emailChange, passwordChange, loginUser } from '../actions';
 import { Input, Card, CardItem, Button, Header, Spinner } from './common';
 
 class LoginForm extends React.Component {
+
   onEmailChange(text) {
     this.props.emailChange(text);
   }
@@ -13,8 +14,8 @@ class LoginForm extends React.Component {
     this.props.passwordChange(text);
   }
   loginButtonPress() {
-    const { email, password } = this.props;
-    this.props.loginUser({ email, password });
+    const { email, password, navigation } = this.props;
+    this.props.loginUser({ email, password, navigation });
   }
   renderButton() {
     if (this.props.loading) {
