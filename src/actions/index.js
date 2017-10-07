@@ -28,13 +28,13 @@ export const loginUser = ({ email, password, navigation }) => {
     firebase.auth().signInWithEmailAndPassword(email, password)
       .then(user => {
         dispatch({ type: LOGIN_USER_SUCCESS, payload: user });
-        navigation.navigate('employeeList');
+        navigation.navigate('main');
       })
       .catch(() => {
         firebase.auth().createUserWithEmailAndPassword(email, password)
           .then(user => {
             dispatch({ type: LOGIN_USER_SUCCESS, payload: user });
-            navigation.navigate('employeeList');
+            navigation.navigate('main');
           })
           .catch(() => dispatch({ type: LOGIN_USER_FAIL }));
       });
